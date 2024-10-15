@@ -1,11 +1,18 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
+
+//Theme
 import { themeColors } from "../theme";
 
+//Nav
+import { useNavigation } from "@react-navigation/native";
+
 export default function CartIcon() {
+  const navigation = useNavigation();
   return (
     <View className="absolute bottom-5 w-full z-50">
       <TouchableOpacity
+        onPress={() => navigation.navigate("Cart")}
         style={{ backgroundColor: themeColors.bgColor(1) }}
         className="flex-row justify-between items-center mx-5 rounded-full p-4 py-3 shadow-lg"
       >

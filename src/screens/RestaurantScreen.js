@@ -1,4 +1,11 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  StatusBar,
+} from "react-native";
 import React from "react";
 
 //Nav
@@ -21,7 +28,8 @@ export default function RestaurantScreen() {
   //   console.log("restaurant : ", item);
   return (
     <View>
-      {/* <CartIcon /> */}
+      <CartIcon />
+      <StatusBar style="light" />
       <ScrollView>
         <View className="relative">
           <Image className="w-full h-72" source={item.image} />
