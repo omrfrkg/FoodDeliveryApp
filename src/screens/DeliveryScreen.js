@@ -16,10 +16,23 @@ import { themeColors } from "../theme";
 //React Native Feather
 import * as Icon from "react-native-feather";
 
+//Redux
+import { useDispatch, useSelector } from "react-redux";
+
+//Slices
+import { selectRestaurant } from "../slices/restaurantSlice";
+import { emptyCart } from "../slices/cartSlice";
+
 export default function DeliveryScreen() {
-  const restaurant = featured.restaurants[0];
+  const restaurant = useSelector(selectRestaurant);
   const navigation = useNavigation();
-  console.log(restaurant.lat, restaurant.lng);
+  const dispatch = useDispatch();
+  //console.log(restaurant.lat, restaurant.lng);
+
+  const cancelOrder = () => {
+    navigation.navigate("Home");
+    dispatch(emptyCart());
+  };
   return (
     <View className="flex-1">
       {/* map view */}
@@ -84,7 +97,7 @@ export default function DeliveryScreen() {
               />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Home")}
+              onPress={cancelOrder}
               className="bg-white p-2 rounded-full"
             >
               <Icon.X strokeWidth={4} stroke={"red"} />
