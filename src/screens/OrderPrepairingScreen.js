@@ -13,8 +13,8 @@ export default function OrderPrepairingScreen() {
   return (
     <View className="flex-1 bg-white justify-center items-center">
       <Image
-        source={require("../../assets/images/delivery.gif")}
-        className="h-80 w-100"
+        source={require("../../assets/images/delivery2.gif")}
+        className="h-100 w-100"
       />
     </View>
   );

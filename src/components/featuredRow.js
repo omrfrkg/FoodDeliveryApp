@@ -1,7 +1,13 @@
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
+
+//Theme
 import { themeColors } from "../theme";
+
+//Components
 import RestaurantCard from "./restaurantCard";
+
+//Constants
 import { featured } from "../constants";
 
 export default function FeaturedRow({ title, description, restaurants }) {
@@ -14,7 +20,7 @@ export default function FeaturedRow({ title, description, restaurants }) {
         </View>
         <TouchableOpacity>
           <Text style={{ color: themeColors.text }} className="font-semibold">
-            See All
+            Hepsini Gör
           </Text>
         </TouchableOpacity>
       </View>
